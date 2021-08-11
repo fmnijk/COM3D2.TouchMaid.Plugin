@@ -18,12 +18,7 @@ namespace TouchMaid
 
         public void Awake()
         {
-            TouchMaidChest = Config.Bind("Hotkeys", "TouchMaid Hotkeys", new KeyboardShortcut(KeyCode.D, KeyCode.LeftShift));
-        }
-
-        public void Constructor()
-        {
-            
+            TouchMaidChest = Config.Bind("Hotkeys", "TouchMaid Hotkeys", new KeyboardShortcut(KeyCode.Keypad1, KeyCode.LeftShift));
         }
 
         public void Update()
@@ -39,19 +34,32 @@ namespace TouchMaid
                         {
                             if (m.Visible == true)
                             {
-                                Vector3 vectorL = (Vector3)AccessTools.Field(typeof(jiggleBone), "dynamicPos").GetValue(m.body0.jbMuneL);
-                                //Debug.Log("(" + vectorL.x.ToString() + ", " + vectorL.y.ToString() + ", " + vectorL.z.ToString() + ")");
-                                vectorL.x += 0f;
-                                vectorL.y += 0.5f;
-                                vectorL.z += 0f;
-                                AccessTools.Field(typeof(jiggleBone), "dynamicPos").SetValue(m.body0.jbMuneL, vectorL);
+                                Vector3 vector;
 
-                                Vector3 vectorR = (Vector3)AccessTools.Field(typeof(jiggleBone), "dynamicPos").GetValue(m.body0.jbMuneR);
-                                //Debug.Log("(" + vectorR.x.ToString() + ", " + vectorR.y.ToString() + ", " + vectorR.z.ToString() + ")");
-                                vectorR.x += 0f;
-                                vectorR.y += 0.5f;
-                                vectorR.z += 0f;
-                                AccessTools.Field(typeof(jiggleBone), "dynamicPos").SetValue(m.body0.jbMuneR, vectorR);
+                                vector = (Vector3)AccessTools.Field(typeof(jiggleBone), "dynamicPos").GetValue(m.body0.jbMuneL);
+                                vector.x += UnityEngine.Random.Range(-0.3f, 0.3f);
+                                vector.y += UnityEngine.Random.Range(-0.3f, 0.3f);
+                                vector.z += UnityEngine.Random.Range(-0.3f, 0.3f);
+                                AccessTools.Field(typeof(jiggleBone), "dynamicPos").SetValue(m.body0.jbMuneL, vector);
+
+                                vector = (Vector3)AccessTools.Field(typeof(jiggleBone), "dynamicPos").GetValue(m.body0.jbMuneR);
+                                vector.x += UnityEngine.Random.Range(-0.3f, 0.3f);
+                                vector.y += UnityEngine.Random.Range(-0.3f, 0.3f);
+                                vector.z += UnityEngine.Random.Range(-0.3f, 0.3f);
+                                AccessTools.Field(typeof(jiggleBone), "dynamicPos").SetValue(m.body0.jbMuneR, vector);
+                                
+
+                                vector = (Vector3)AccessTools.Field(typeof(jiggleBone), "vel").GetValue(m.body0.jbMuneL);
+                                vector.x += UnityEngine.Random.Range(-0.1f, 0.1f);
+                                vector.y += UnityEngine.Random.Range(-0.1f, 0.1f);
+                                vector.z += UnityEngine.Random.Range(-0.1f, 0.1f);
+                                AccessTools.Field(typeof(jiggleBone), "vel").SetValue(m.body0.jbMuneL, vector);
+
+                                vector = (Vector3)AccessTools.Field(typeof(jiggleBone), "vel").GetValue(m.body0.jbMuneR);
+                                vector.x += UnityEngine.Random.Range(-0.1f, 0.1f);
+                                vector.y += UnityEngine.Random.Range(-0.1f, 0.1f);
+                                vector.z += UnityEngine.Random.Range(-0.1f, 0.1f);
+                                AccessTools.Field(typeof(jiggleBone), "vel").SetValue(m.body0.jbMuneR, vector);
                             }
                         }
                     }
