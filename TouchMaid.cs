@@ -11,7 +11,7 @@ using HarmonyLib;
 
 namespace TouchMaid
 {
-    [BepInPlugin("org.fmnijk.plugins.touchmaid", "COM3D2.TouchMaid.Plugin", "1.0.0.0")]
+    [BepInPlugin("org.fmnijk.plugins.touchmaid", "COM3D2.TouchMaid.Plugin", "1.0.0.1")]
     public class TouchMaid : BaseUnityPlugin
     {
         private ConfigEntry<KeyboardShortcut> TouchMaidChest { get; set; }
