@@ -7,4 +7,4 @@ TouchMaid is a COM3D2 plugin to touch maids via hotkeys or mouseclicks.
 
 3. Start COM3D2 and use hotkeys to touch maids. Default is `LeftShift+D`. Auto repeating is `LeftShift+F`.
 
-WIP:use mouse to touch maids.
+WIP:Use mouse to touch maids.
