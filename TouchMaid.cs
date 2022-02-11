@@ -11,6 +11,8 @@ using System.Collections;
 //TODO:滑鼠控制胸部
 //TODO:控制頭髮
 //TODO:控制裙子
+//TODO:隨時控制燈光
+//TODO:紅屁股復原
 /*if (Input.GetMouseButton(0))
 {
     var a = Input.mousePosition;
